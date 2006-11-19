@@ -1,0 +1,4 @@
+include LICENSE
+include nautilus/*.py
+include share/glade/*.glade
+include share/glade/*.gladep

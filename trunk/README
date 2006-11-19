@@ -1,0 +1,18 @@
+ArgonautSVN
+Nautilus Subversion extension
+
+The goal of the ArgonautSVN project is to develop a Subversion client GUI implemented as an extension to Nautilus, the Gnome file manager. The project is inspired by TortoiseSVN, the SVN extension for the Windows Explorer. ArgonautSVN is intended to provide a similar powerfull SVN GUI for the Gnome desktop environment.
+
+However, ArgonautSVN will not be an exact copy of TortoiseSVN. Instead ArgonautSVN should be integrated into the Gnome desktop environment as good as possible. That means that the project should comply to common Gnome standards, such as the Gnome Human Interface Guidelines (HIG).
+
+On a technical basis ArgonautSVN will be implemented in Python, using PyGTK. A prototype implementation of ArgonautSVN which will demonstrate all core technologies will be released soon.
+
+Requirements
+============
+
+Nautilus
+nautilus-python
+Python
+PyGtk
+pyglade
+pysvn

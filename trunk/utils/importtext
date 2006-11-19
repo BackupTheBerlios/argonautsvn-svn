@@ -1,0 +1,2 @@
+#!/bin/sh
+msgfmt de.po -o locale/de/LC_MESSAGES/nautilus-svn.mo

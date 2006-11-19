@@ -1,0 +1,4 @@
+#!/bin/sh
+intltool-extract --type=gettext/glade nautilus-svn.glade
+pygettext -k N_ *.py *.h
+msgmerge -U de.po messages.pot
