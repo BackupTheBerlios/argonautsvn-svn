@@ -18,13 +18,29 @@
 # along with ArgonautSVN; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import sys
-PREFIX = sys.prefix
+"""
+:authors:
+    Philipp Wolfer (phw@users.berlios.de)
+:copyright: 2006 Philipp Wolfer
+:license: GNU General Public License
+:since: 2006-11-19
+:version: $Revision$
+"""
 
+import sys
 import gettext
 import gtk.glade
 
+##
+# Installation prefix.
+PREFIX = sys.prefix
+
+##
+# Application name used by gettext.
 APP = 'argonautsvn'
+
+##
+# Locale directory.
 DIR = 'locale'
 
 gettext.install(APP, DIR, unicode=True)

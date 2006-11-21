@@ -18,7 +18,18 @@
 # along with ArgonautSVN; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-"""SVN commit dialog."""
+"""
+SVN commit dialog.
+
+Provides a GTK based commit dialog.
+
+:authors:
+    Philipp Wolfer (phw@users.berlios.de)
+:copyright: 2006 Philipp Wolfer
+:license: GNU General Public License
+:since: 2006-11-19
+:version: $Revision$
+"""
 
 from argonautsvn import *
 from WorkingCopy import *
@@ -36,23 +47,42 @@ except:
     sys.exit(1)
 
 class ChangedFilesThread(threading.Thread):
+    """
+    Thread class for generating the list of changed paths in the working copy
+    in the background.
+    """
+    
     def __init__(self, workingCopy, callback):
+        """
+        :param workingCopy: Working copy for which the changed files should be
+            determined.
+        :type workingCopy: `asvn.WorkingCopy.WorkingCopy`
+        :param callback: Callback function to run after the changed files have
+            been determined. Must accept the list of changed files as a single
+            parameter.
+        :type callback: list
+        """
         threading.Thread.__init__(self)
         self.setDaemon(True)
-        self.workingCopy = workingCopy
-        self.callback = callback
+        self.__workingCopy = workingCopy
+        self.__callback = callback
 
     def run(self):
+        """
+        Starts the thread.
+        """
         threading.Thread.run(self)
-        changedPaths = self.workingCopy.getChangedPaths()
-        gobject.idle_add(self.callback, changedPaths)
+        changedPaths = self.__workingCopy.getChangedPaths()
+        gobject.idle_add(self.__callback, changedPaths)
 
 class CommitDialog:
     """SVN commit dialog."""
 
     def __init__(self, workingCopy):
-        """The constructor.
-        workingCopy is an instance of WorkingCopy."""
+        """
+        :param workingCopy: Working copy.
+        :type workingCopy: `asvn.WorkingCopy.WorkingCopy`
+        """
         self.workingCopy = workingCopy
      
         # Set the Glade file
@@ -96,7 +126,7 @@ class CommitDialog:
         gtk.main()
 
     def __initChangedFilesList(self):
-        """Initialize the changed files list."""
+        """Initialize the list of changed files."""
         self.changedFilesList = gtk.ListStore(bool, str, str)
         
         # Add all columns
@@ -120,7 +150,14 @@ class CommitDialog:
         self.listviewChangedFiles.set_model(self.changedFilesList)
 
     def fillChangedFilesList(self, changedPaths):
-        """Fille the changed files list."""
+        """
+        Fill the changed files list.
+        
+        Callback function called by `ChangedFilesThread`.
+        
+        :param changedPaths: List of changed paths.
+        :type changedPaths: list
+        """
         print changedPaths
         for changedPath in changedPaths:
             if changedPath.text_status in (pysvn.wc_status_kind.modified,

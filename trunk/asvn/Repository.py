@@ -18,12 +18,29 @@
 # along with ArgonautSVN; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+"""
+Subversion repository.
+
+Class representing a subversion repository.
+
+:authors:
+    Philipp Wolfer (phw@users.berlios.de)
+:copyright: 2006 Philipp Wolfer
+:license: GNU General Public License
+:since: 2006-11-19
+:version: $Revision$
+"""
+
 import pysvn
 
-class Repository:
+class Repository(object):
     """SVN-Repository"""
 
     def __init__(self, url):
+        """
+        :param url: Reporitory URL
+        :type url: str
+        """
         self.url = url
         self.client = pysvn.Client()
         print url

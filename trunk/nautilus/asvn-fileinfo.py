@@ -18,10 +18,21 @@
 # along with ArgonautSVN; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+"""
+:authors:
+    Philipp Wolfer (phw@users.berlios.de)
+:copyright: 2006 Philipp Wolfer
+:license: GNU General Public License
+:since: 2006-11-19
+:version: $Revision$
+"""
+
 import nautilus
 import pysvn
 
-class ASVNEmblems(nautilus.InfoProvider):
+class ASVNFileInfo(nautilus.InfoProvider):
+    """Adds SVN status emblems and column information for SVN files to nautilus.
+    """
     
     emblems = {
         pysvn.wc_status_kind.none:        None,
@@ -44,9 +55,12 @@ class ASVNEmblems(nautilus.InfoProvider):
     def __init__(self):
         print 'Initializing ArgonautSVN emblem extension'
     
-    def update_file_info (self, file):
+    def update_file_info(self, file):
         """Updates the emblems for a file.
-        TODO: Files should be invalidated with
+        
+        @param[in,out] file A nautilus.FileInfo resource.
+        @return None
+        @todo Files should be invalidated with
         nautilus.FileInfo.invalidate_extension_info() somewhere."""
         
         print 'DEBUG: Updating file info: %s' % file.get_uri()

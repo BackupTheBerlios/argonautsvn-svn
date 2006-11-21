@@ -18,6 +18,15 @@
 # along with ArgonautSVN; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+"""
+:authors:
+    Philipp Wolfer (phw@users.berlios.de)
+:copyright: 2006 Philipp Wolfer
+:license: GNU General Public License
+:since: 2006-11-19
+:version: $Revision$
+"""
+
 import os
 import nautilus
 import pysvn
