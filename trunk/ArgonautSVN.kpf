@@ -5,8 +5,8 @@
 </menu>
 <URL keyboard_shortcut="" idref="b0b0c8b5-4bc7-47e3-bcc4-800c5e431c10" id="9ef409dc-e158-4ac7-a640-f79ba5f7034b" name="Project site">
 http://developer.berlios.de/projects/argonautsvn/</URL>
-<command insertOutput="0" keyboard_shortcut="" idref="b0b0c8b5-4bc7-47e3-bcc4-800c5e431c10" name="Generate API documentation" parseRegex="" operateOnSelection="0" id="7ec47433-b10d-46d1-96e9-969fe12c69a1" env="" doNotOpenOutputWindow="0" showParsedOutputList="0" cwd="%p" parseOutput="0" runIn="command-output-window">
-epydoc --config epydoc</command>
+<command parseRegex="" keyboard_shortcut="" idref="b0b0c8b5-4bc7-47e3-bcc4-800c5e431c10" name="Generate API documentation" insertOutput="0" id="7ec47433-b10d-46d1-96e9-969fe12c69a1" operateOnSelection="0" parseOutput="0" env="" doNotOpenOutputWindow="0" showParsedOutputList="0" cwd="%p" runIn="command-output-window">
+epydoc --config utils/epydoc</command>
 <preference-set idref="f80d4214-8a3f-46e5-b7f4-a9d8d2cf0f5b">
   <boolean id="import_live">1</boolean>
 </preference-set>
