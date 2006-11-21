@@ -1,0 +1,17 @@
+[epydoc]
+
+name: ArgonautSVN
+url: http://argonautsvn.berlios.de
+
+modules: asvn
+#modules: nautilus/asvn-contextmenu.py
+#modules: nautilus/asvn-fileinfo.py
+
+output: html
+target: doc/api
+
+docformat: restructuredtext
+top: asvn
+
+parse: yes
+introspect: yes

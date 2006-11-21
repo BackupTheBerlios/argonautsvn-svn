@@ -29,6 +29,9 @@ ArgonautSVN is a Subversion client GUI implemented as an extension to Nautilus, 
 :license: GNU General Public License
 :since: 2006-11-19
 :version: $Revision$
+
+.. packagetree::
+    :style: tree
 """
 
 __all__ = [
