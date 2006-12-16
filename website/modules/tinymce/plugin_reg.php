@@ -102,5 +102,8 @@ $plugins['table']['theme_advanced_buttons3'] = array('tablecontrols');
 $plugins['zoom'] = array();
 $plugins['zoom']['theme_advanced_buttons2'] = array('zoom');
 
+$plugins['xhtmlxtras'] = array();
+$plugins['xhtmlxtras']['theme_advanced_buttons3'] = array('cite', 'ins', 'del', 'abbr', 'acronym');
+
 return $plugins;
 }
