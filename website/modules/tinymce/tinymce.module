@@ -198,7 +198,12 @@ EOD;
       
       // TinyMCE Compressor
       if (file_exists($tinymce_mod_path . '/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php')) {
-        drupal_add_js($tinymce_mod_path . '/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php');
+		$compressor_options = '?js=true';
+		$compressor_options .= '&plugins='.implode(',', $init['plugins']);
+		$compressor_options .= '&themes='.$init['theme'];
+		$compressor_options .= '&languages='.$init['language'];
+		$compressor_options .= '&diskcache=false';
+		drupal_add_js($tinymce_mod_path . '/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php'.$compressor_options);
       }
       else {
         // For some crazy reason IE will only load this JS file if the absolute reference is given to it.
